@@ -20,6 +20,7 @@ const ReactApp = require('../reactApp/App.server').default;
 
 const PORT = 3000;
 const app = express();
+const functionPath = '/rsc'; // modify this based on how you set up your api route
 
 app.use(compress());
 app.use(express.json());
@@ -35,7 +36,7 @@ function handleErrors(fn) {
 }
 
 app.get(
-  '/',
+  functionPath + '/',
   handleErrors(async function(_req, res) {
     await waitForWebpack();
     const html = readFileSync(
@@ -73,7 +74,7 @@ function sendResponse(req, res, redirectToId) {
   });
 }
 
-app.get('/react', function(req, res) {
+app.get(functionPath + '/react', function(req, res) {
   sendResponse(req, res, null);
 });
 

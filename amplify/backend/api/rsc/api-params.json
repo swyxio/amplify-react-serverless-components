@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/rsc",
+            "lambdaFunction": "rsc",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/rsc"
+        }
+    ],
+    "resourceName": "rsc",
+    "apiName": "rsc",
+    "functionArns": [
+        {
+            "lambdaFunction": "rsc"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-amplifyrscdemo-dev-64339-authRole",
+        "unAuthRoleName": "amplify-amplifyrscdemo-dev-64339-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "rsc",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

@@ -69,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-amplifyrscdemo-dev-64339-deployment",
-          "S3Key": "amplify-builds/rsc-65324d68772b44377677-build.zip"
+          "S3Key": "amplify-builds/rsc-63767163794356633563-build.zip"
         }
       }
     },

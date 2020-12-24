@@ -11,7 +11,7 @@ babelRegister({
 });
 
 const express = require('express');
-const compress = require('compression');
+// const compress = require('compression');
 const {readFileSync} = require('fs');
 const {pipeToNodeWritable} = require('react-server-dom-webpack/writer');
 const path = require('path');
@@ -23,8 +23,12 @@ const PORT = 3000;
 const app = express();
 const functionPath = '/rsc'; // modify this based on how you set up your api route
 
-app.use(compress());
+// app.use(compress());
 app.use(express.json());
+// // maybe to try later
+// var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+// app.use(bodyParser.json())
+// app.use(awsServerlessExpressMiddleware.eventContext())
 
 function handleErrors(fn) {
   console.log('handleErrors called')

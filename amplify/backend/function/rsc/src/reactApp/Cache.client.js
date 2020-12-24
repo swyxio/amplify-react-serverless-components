@@ -21,7 +21,7 @@ export function useServerResponse(location) {
     return response;
   }
   response = createFromFetch(
-    fetch('/react?location=' + encodeURIComponent(key))
+    fetch('/dev/rsc/react?location=' + encodeURIComponent(key))
   );
   cache.set(key, response);
   return response;

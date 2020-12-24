@@ -70,6 +70,9 @@ function sendResponse(req, res, redirectToId) {
   if (redirectToId) {
     location.selectedId = redirectToId;
   }
+  // https://stackoverflow.com/questions/44815649/aws-api-gateway-err-content-decoding-failed-in-browser
+  // otherwise we get ERR_CONTENT_DECODING_FAILED 200
+  res.set('Accept-Encoding', 'identity');  
   res.set('X-Location', JSON.stringify(location));
   renderReactTree(res, {
     selectedId: location.selectedId,
@@ -82,6 +85,7 @@ app.get(functionPath + '/react', function(req, res) {
   sendResponse(req, res, null);
 });
 
+// VIRTUAL
 app.use(functionPath, express.static('build'));
 app.use(functionPath, express.static('public'));
 

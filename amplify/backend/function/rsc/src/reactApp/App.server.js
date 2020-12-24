@@ -1,5 +1,6 @@
 
-const { forceSync } = require('node-force-sync')
+// const { forceSync } = require('node-force-sync') // doesnt work in lambda
+const forceSync = require('sync-rpc')
 const AWS = require('aws-sdk')
 const docClient = new AWS.DynamoDB.DocumentClient();
 

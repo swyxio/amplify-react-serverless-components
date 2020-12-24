@@ -82,8 +82,8 @@ app.get(functionPath + '/react', function(req, res) {
   sendResponse(req, res, null);
 });
 
-app.use(express.static('build'));
-app.use(express.static('public'));
+app.use(functionPath, express.static('build'));
+app.use(functionPath, express.static('public'));
 
 app.on('error', function(error) {
   if (error.syscall !== 'listen') {

@@ -15,7 +15,7 @@ webpack(
     entry: [path.resolve(__dirname, '../reactApp/index.client.js')],
     output: {
       path: path.resolve(__dirname, '../build'),
-      filename: 'main.js',
+      filename: 'rsc/main.js',
     },
     module: {
       rules: [

@@ -5,6 +5,8 @@
 
 ![image](https://user-images.githubusercontent.com/6764957/103055871-65502080-45d6-11eb-82ad-b91931cc02d7.png)
 
+> Context - [What are React Server Components?](https://dev.to/swyx/an-annotated-guide-to-the-react-server-components-demo-2a83)
+
 The main React code and serverless code can be found in `/amplify/backend/function/rsc/src`.
 
 ## You can watch the live stream here! https://www.youtube.com/watch?v=VA3TFymZlW4

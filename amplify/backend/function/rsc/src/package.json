@@ -40,7 +40,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "NODE_ENV=production node ./scripts/build.js",
+    "build": "NODE_ENV=development node ./scripts/build.js",
     "postbuild": "echo REMEMBER TO MOVE build/main.js files"
   },
   "author": "",

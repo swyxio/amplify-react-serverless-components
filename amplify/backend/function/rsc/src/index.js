@@ -1,4 +1,9 @@
-const awsServerlessExpress = require('aws-serverless-express');
+/* Amplify Params - DO NOT EDIT
+	ENV
+	REGION
+	STORAGE_DYNAMOA44CAB8E_ARN
+	STORAGE_DYNAMOA44CAB8E_NAME
+Amplify Params - DO NOT EDIT */const awsServerlessExpress = require('aws-serverless-express');
 const app = require('./server/app.server');
 
 const server = awsServerlessExpress.createServer(app);

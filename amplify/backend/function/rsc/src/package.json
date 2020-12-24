@@ -40,7 +40,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "NODE_ENV=production node ./scripts/build.js",
+    "postbuild": "echo REMEMBER TO MOVE build/main.js files"
   },
   "author": "",
   "license": "ISC"

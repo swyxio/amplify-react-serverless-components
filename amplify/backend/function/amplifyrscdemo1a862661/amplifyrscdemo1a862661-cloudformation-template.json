@@ -41,12 +41,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "rsc",
+            "amplifyrscdemo1a862661",
             {
               "Fn::Join": [
                 "",
                 [
-                  "rsc",
+                  "amplifyrscdemo1a862661",
                   "-",
                   {
                     "Ref": "env"
@@ -63,12 +63,6 @@
             },
             "REGION": {
               "Ref": "AWS::Region"
-            },
-            "STORAGE_DYNAMOA44CAB8E_NAME": {
-              "Ref": "storagedynamoa44cab8eName"
-            },
-            "STORAGE_DYNAMOA44CAB8E_ARN": {
-              "Ref": "storagedynamoa44cab8eArn"
             }
           }
         },
@@ -83,7 +77,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-amplifyrscdemo-dev-64339-deployment",
-          "S3Key": "amplify-builds/rsc-61364b5a69326e663767-build.zip"
+          "S3Key": "amplify-builds/amplifyrscdemo1a862661-2b6837595659666c3055-build.zip"
         }
       }
     },
@@ -93,12 +87,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "amplifyrscdemoLambdaRole1305fa73",
+            "amplifyrscdemoLambdaRolee4669e91",
             {
               "Fn::Join": [
                 "",
                 [
-                  "amplifyrscdemoLambdaRole1305fa73",
+                  "amplifyrscdemoLambdaRolee4669e91",
                   "-",
                   {
                     "Ref": "env"
@@ -164,41 +158,17 @@
                   }
                 ]
               }
-            }
-          ]
-        }
-      }
-    },
-    "AmplifyResourcesPolicy": {
-      "DependsOn": [
-        "LambdaExecutionRole"
-      ],
-      "Type": "AWS::IAM::Policy",
-      "Properties": {
-        "PolicyName": "amplify-lambda-execution-policy",
-        "Roles": [
-          {
-            "Ref": "LambdaExecutionRole"
-          }
-        ],
-        "PolicyDocument": {
-          "Version": "2012-10-17",
-          "Statement": [
+            },
             {
               "Effect": "Allow",
               "Action": [
-                "dynamodb:Put*",
-                "dynamodb:Create*",
-                "dynamodb:BatchWriteItem",
-                "dynamodb:Get*",
-                "dynamodb:BatchGetItem",
-                "dynamodb:List*",
-                "dynamodb:Describe*",
-                "dynamodb:Scan",
+                "dynamodb:DescribeTable",
+                "dynamodb:GetItem",
                 "dynamodb:Query",
-                "dynamodb:Update*",
-                "dynamodb:RestoreTable*",
-                "dynamodb:Delete*"
+                "dynamodb:Scan",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem"
               ],
               "Resource": [
                 {

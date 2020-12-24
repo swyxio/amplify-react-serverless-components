@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/testdatabasefunction",
+            "lambdaFunction": "amplifyrscdemo1a862661",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/testdatabasefunction"
+        }
+    ],
+    "resourceName": "testdatabasefunction",
+    "apiName": "testdatabasefunction",
+    "functionArns": [
+        {
+            "lambdaFunction": "amplifyrscdemo1a862661"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-amplifyrscdemo-dev-64339-authRole",
+        "unAuthRoleName": "amplify-amplifyrscdemo-dev-64339-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "amplifyrscdemo1a862661",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

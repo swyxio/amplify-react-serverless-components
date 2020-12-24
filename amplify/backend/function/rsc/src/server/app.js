@@ -7,6 +7,7 @@ babelRegister({
   ignore: [/\/(build|server|node_modules)\//],
   presets: [['react-app', {runtime: 'automatic'}]],
   plugins: ['@babel/transform-modules-commonjs'],
+  cache: false, // aws lambda doesnt let you store cahce in node_modules
 });
 
 const express = require('express');
@@ -26,6 +27,7 @@ app.use(compress());
 app.use(express.json());
 
 function handleErrors(fn) {
+  console.log('handleErrors called')
   return async function(req, res, next) {
     try {
       return await fn(req, res);
@@ -39,10 +41,12 @@ app.get(
   functionPath + '/',
   handleErrors(async function(_req, res) {
     await waitForWebpack();
+    console.log('reading file.....')
     const html = readFileSync(
       path.resolve(__dirname, '../build/index.html'),
       'utf8'
     );
+    console.log('serving file.....')
     // Note: this is sending an empty HTML shell, like a client-side-only app.
     // However, the intended solution (which isn't built out yet) is to read
     // from the Server endpoint and turn its response into an HTML stream.

@@ -78,11 +78,7 @@ function sendResponse(req, res, redirectToId) {
   // otherwise we get ERR_CONTENT_DECODING_FAILED 200
   res.set('Accept-Encoding', 'identity');  
   res.set('X-Location', JSON.stringify(location));
-  renderReactTree(res, {
-    selectedId: location.selectedId,
-    isEditing: location.isEditing,
-    searchText: location.searchText,
-  });
+  renderReactTree(res, { });
 }
 
 app.get(functionPath + '/react', function(req, res) {
